@@ -1,0 +1,40 @@
+
+
+/* Body */
+.title{
+    text-align: center;
+    margin-left: 14em;
+}
+
+
+
+
+
+/* Answer Cards */
+
+.card1, .card2 , .card3, .card4{
+    margin-top: 15em;
+    display: inline-block;
+    justify-content: space-around;
+    margin: 2em;
+}
+
+.text-color{
+    color: maroon
+}
+
+.box1{
+    text-align: center;
+    
+}
+
+
+
+
+
+/* Entore Page */
+
+body {
+    background-color: lightcyan;
+}
+

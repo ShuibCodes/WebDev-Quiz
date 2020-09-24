@@ -1,0 +1,124 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Quiz App</title>
+  </head>
+  <body>
+      <!-- top section -->
+      <div class="intro py-3 bg-white text-center">
+        <div class="container">
+          <h2 class="text-primary display-3 my-4">Wev Dev Quiz</h2>
+        </div>
+      </div>
+
+      <!-- quiz section -->
+      <div class="quiz py-4 bg-primary">
+        <div class="container">
+          <h2 class="my-5 text-white">On with the questions...</h2>
+           <div class="message">
+             <P class="resultMessage" style="display: none;"> 
+                 You Scored  ... <span class="thisspan"></span>
+             </P>
+           </div>
+    
+          <form class="quiz-form text-light" >
+            <div class="my-5"  style="border:1px solid #cecece;" id="js">
+              <p class=" question1 lead font-weight-normal">1. What is Javascript?</p>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q1" value="A" id="1qa" checked>
+                <label class=" a form-check-label">A Name</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q1" value="B" id="1qb">
+                <label class=" form-check-label">A language</label>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btnOne btn-secondary">Need a Hint?</button>
+              </div>
+              <div>
+                    <div class="text-center">
+                            <div class="hint1" style="display: none;" >
+                                <p>this is a hint for Question 1</p>
+                            </div>
+                    </div>
+
+              </div>
+            </div>
+            <div class="my-5"  style="border:1px solid #cecece;">
+              <p class="lead font-weight-normal">2. Is MaterlizeUI a CSS framwork?</p>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q2" value="A" id="2qa" checked>
+                <label class="form-check-label">False
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q2" value="B" id="2qb">
+                <label class="form-check-label">True</label>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btnTwo btn-secondary">Need a Hint?</button>
+              </div>
+              <div class="text-center">
+                <div class="hint2" style="display: none;" >
+                    <p>this is a hint for Question 2</p>
+                </div>
+        </div>
+            </div> 
+            <div class="my-5"  style="border:1px solid #cecece;">
+              <p class="lead font-weight-normal">3. Which syntax do you use when the value is of the same type of the variable?</p>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q3" value="A" id="3qa" checked>
+                <label class="form-check-label"> The double equals symbol</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q3" value="B" id="3qb">
+                <label class="form-check-label">The Triple Equals sign</label>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btnThree btn-secondary">Need a Hint?</button>
+              </div>
+              <div class="text-center">
+                <div class="hint3" style="display: none;" >
+                    <p>this is a hint for Question 3</p>
+                </div>
+        </div>
+            </div>
+            <div class="my-5"  style="border:1px solid #cecece;">
+              <p class="lead font-weight-normal">4. Is a constructor the same as a function</p>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q4" value="A" id="4qa" checked>
+                <label class="form-check-label"> Yes, it is</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input type="radio" name="q4" value="B" id="4qb">
+                <label class="form-check-label">No, but it is similar </label>
+              </div>
+              <div class="text-center">
+                <button type="button" class="btnFour btn-secondary">Need a Hint?</button>
+              </div>
+              <div class="text-center">
+                <div class="hint4" style="display: none;" >
+                    <p>this is a hint for Question 4</p>
+                </div>
+        </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" class="submit btn btn-success"> 
+            </div>
+          </form>
+          <button id="ans" class="thisbtn btn-danger" >See Answers</button>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+<script src="app.js"></script>    
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
