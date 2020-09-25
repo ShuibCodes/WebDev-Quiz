@@ -103,14 +103,3 @@ function seeHint4(){
 
 
 
-
-// creating btn that takes to new page with answers:
-
-const seeAns = document.querySelector(".thisbtn");
-
-seeAns.addEventListener("click", function(){
-    location.href = "answers.html";
-});
-
-
-
