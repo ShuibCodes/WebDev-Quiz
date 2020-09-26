@@ -1,9 +1,8 @@
 // Selecting Elements
-// const hint = document.querySelector(".hint");
+const hint = document.querySelector(".hintBtn");
 // const hint2 = document.querySelector(".hint2");
 // const hint3 = document.querySelector(".hint3");
 // const hint4 = document.querySelector(".hint4");
-// const thishint = document.querySelector(".thishint");
 const form = document.querySelector('.quiz-form');
 const answers = ['B' , 'B' , 'B' , 'B'];
 const btn = document.querySelector(".submit");
@@ -28,16 +27,7 @@ arrayAnswer.forEach(function(el){
 
 
 // Click "Need a Hint?" to see Hint:
-// Hint for Question 1:
-  // seeHint();
-// HInt for Question 2:
-//   seeHint2();
-// // Hint for Question 3:
-//   seeHint3();
-// // Hint for Question 4:
-//   seeHint4();
-
-
+  seeHint();
 // When submit is clicked-
 QuestionBank1();
 QuestionBank2()
@@ -46,7 +36,6 @@ QuestionBank4();
 ScrollTop();
 hidePrompt();
 seeAnswers();
-
 
 btn.addEventListener("click", function(e){
     e.preventDefault();
@@ -63,7 +52,7 @@ btn.addEventListener("click", function(e){
   });
     
   // Display Results Message:
-  
+
   const finalResult = document.querySelector('.thisspan');
   finalResult.textContent = `${score}%`;
   finalResult.style.display = "block";
@@ -79,50 +68,20 @@ btn.addEventListener("click", function(e){
     
 })
 
-//creating a button to display hints 
-
+// creating a button to display hints 
+function seeHint(){
   const questions = document.getElementsByClassName("question"); //Get all questions
-
-  for (var i = 0; i < questions.length; i++) { //Iterate for each one of the questions
   
+  for (var i = 0; i < questions.length; i++) { //Iterate for each one of the questions
+
     questions[i].addEventListener("click", function(e) { //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
       if(e.target.classList[0] == "hintBtn") { //Check if the target that triggered the event is the hint button
         this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
       }
     });
   }
-
-
-// function seeHint2(){
-//   const hintBtn2 = document.querySelector(".btnTwo");
-//   hintBtn2.addEventListener("click",function(){
-//       if (hint2.style.display === "none") {
-//           hint2.style.display = "block";
-//         } else {
-//           hint2.style.display = "none";
-//         }
-//   });
-// }  
-// function seeHint3(){
-//   const hintBtn3 = document.querySelector(".btnThree");
-//   hintBtn3.addEventListener("click",function(){
-//       if (hint3.style.display === "none") {
-//           hint3.style.display = "block";
-//         } else {
-//           hint3.style.display = "none";
-//         }
-//   });
-// }  
-// function seeHint4(){
-//   const hintBtn4 = document.querySelector(".btnFour");
-//   hintBtn4.addEventListener("click",function(){
-//       if (hint4.style.display === "none") {
-//           hint4.style.display = "block";
-//         } else {
-//           hint4.style.display = "none";
-//         }
-//   });
-// }  
+}
+ 
 
 
 // function to hide answers and show when quiz is finished
