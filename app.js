@@ -1,8 +1,9 @@
 // Selecting Elements
-const hint = document.querySelector(".hint");
-const hint2 = document.querySelector(".hint2");
-const hint3 = document.querySelector(".hint3");
-const hint4 = document.querySelector(".hint4");
+// const hint = document.querySelector(".hint");
+// const hint2 = document.querySelector(".hint2");
+// const hint3 = document.querySelector(".hint3");
+// const hint4 = document.querySelector(".hint4");
+// const thishint = document.querySelector(".thishint");
 const form = document.querySelector('.quiz-form');
 const answers = ['B' , 'B' , 'B' , 'B'];
 const btn = document.querySelector(".submit");
@@ -28,13 +29,13 @@ arrayAnswer.forEach(function(el){
 
 // Click "Need a Hint?" to see Hint:
 // Hint for Question 1:
-  seeHint();
+  // seeHint();
 // HInt for Question 2:
-  seeHint2();
-// Hint for Question 3:
-  seeHint3();
-// Hint for Question 4:
-  seeHint4();
+//   seeHint2();
+// // Hint for Question 3:
+//   seeHint3();
+// // Hint for Question 4:
+//   seeHint4();
 
 
 // When submit is clicked-
@@ -45,6 +46,7 @@ QuestionBank4();
 ScrollTop();
 hidePrompt();
 seeAnswers();
+
 
 btn.addEventListener("click", function(e){
     e.preventDefault();
@@ -77,49 +79,50 @@ btn.addEventListener("click", function(e){
     
 })
 
-// creating a button to display hints 1
-function seeHint(){
-  const hintBtn = document.querySelector(".btnOne");
-  hintBtn.addEventListener("click",function(){
-      if (hint.style.display === "none") {
-          hint.style.display = "block";
-        } else {
-          hint.style.display = "none";
-        }
-  });
-}
+//creating a button to display hints 
+
+  const questions = document.getElementsByClassName("question"); //Get all questions
+
+  for (var i = 0; i < questions.length; i++) { //Iterate for each one of the questions
+  
+    questions[i].addEventListener("click", function(e) { //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
+      if(e.target.classList[0] == "hintBtn") { //Check if the target that triggered the event is the hint button
+        this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
+      }
+    });
+  }
 
 
-function seeHint2(){
-  const hintBtn2 = document.querySelector(".btnTwo");
-  hintBtn2.addEventListener("click",function(){
-      if (hint2.style.display === "none") {
-          hint2.style.display = "block";
-        } else {
-          hint2.style.display = "none";
-        }
-  });
-}  
-function seeHint3(){
-  const hintBtn3 = document.querySelector(".btnThree");
-  hintBtn3.addEventListener("click",function(){
-      if (hint3.style.display === "none") {
-          hint3.style.display = "block";
-        } else {
-          hint3.style.display = "none";
-        }
-  });
-}  
-function seeHint4(){
-  const hintBtn4 = document.querySelector(".btnFour");
-  hintBtn4.addEventListener("click",function(){
-      if (hint4.style.display === "none") {
-          hint4.style.display = "block";
-        } else {
-          hint4.style.display = "none";
-        }
-  });
-}  
+// function seeHint2(){
+//   const hintBtn2 = document.querySelector(".btnTwo");
+//   hintBtn2.addEventListener("click",function(){
+//       if (hint2.style.display === "none") {
+//           hint2.style.display = "block";
+//         } else {
+//           hint2.style.display = "none";
+//         }
+//   });
+// }  
+// function seeHint3(){
+//   const hintBtn3 = document.querySelector(".btnThree");
+//   hintBtn3.addEventListener("click",function(){
+//       if (hint3.style.display === "none") {
+//           hint3.style.display = "block";
+//         } else {
+//           hint3.style.display = "none";
+//         }
+//   });
+// }  
+// function seeHint4(){
+//   const hintBtn4 = document.querySelector(".btnFour");
+//   hintBtn4.addEventListener("click",function(){
+//       if (hint4.style.display === "none") {
+//           hint4.style.display = "block";
+//         } else {
+//           hint4.style.display = "none";
+//         }
+//   });
+// }  
 
 
 // function to hide answers and show when quiz is finished
