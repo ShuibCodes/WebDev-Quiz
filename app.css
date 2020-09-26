@@ -62,7 +62,7 @@ body {
         
 }
 
-.btnOne{
+.hintBtn{
     width: fit-content;
     justify-content: space-around;
 }
@@ -90,6 +90,10 @@ body {
 }
 
 
+
+.hidehint{
+  display: none;
+}
 
 
 

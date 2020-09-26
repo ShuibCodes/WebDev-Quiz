@@ -31,8 +31,8 @@
     
           <form class="quiz-form text-light" style="display: block;">
             <div class="maincontainer">
-              <div class="questionCard1 my-5"  style="border:1px solid #cecece;" id="js" >
-                <p class=" question1 lead font-weight-normal">1. Inside which HTML element do we put the JavaScript?</p>
+              <div class="question questionCard1 my-5"  style="border:1px solid #cecece;" id="js" >
+                <p class=question1 lead font-weight-normal">1. Inside which HTML element do we put the JavaScript?</p>
                 <div class="form-check my-2 text-white-50">
                   <input type="radio" name="q1" value="A" id="1qa" checked>
                   <label class="a form-check-label"> a "js" tag </label>
@@ -41,13 +41,12 @@
                   <input type="radio" name="q1" value="B" id="1qb">
                   <label class=" form-check-label">A "script" tag </label>
                 </div>
-                <div class=" container text-center">
-                  <button type="button" class="btnOne btn btn-secondary">Need a Hint?</button>
+                <div class="question container text-center">
+                  <button type="button" class="hintBtn btn btn-secondary">Need a Hint?</button>
                   <button type="button" class="ansbtn btn btn-info">Answers</button>
-                </div>
-                <div>
+
                       <div class="text-center">
-                              <div class="hint" style="display: none;" >
+                              <div class="msg hidehint">
                                   <p>this is a hint for Question 1</p>
                               </div>
                       </div>
@@ -78,14 +77,14 @@
                 <input type="radio" name="q2" value="B" id="2qb">
                 <label class="form-check-label">using: "// add comment here"</label>
               </div>
-              <div class="example text-center">
+              <div class="question container text-center">
                 
-                <button type="button" class="btnTwo btn  btn-secondary">Need a Hint?</button>
+                <button type="button" class="hintBtn btn  btn-secondary">Need a Hint?</button>
                 <button type="button" class="ansbtn2 btn btn-info" >Answers</button>
               </div>
               
               <div class="text-center">
-                <div class="hint2" style="display: none;" >
+                <div class="msg hidehint">
                     <p>this is a hint for Question 2</p>
                 </div>
         </div>
@@ -115,7 +114,7 @@
                 <label class="form-check-label">The Triple Equals sign</label>
               </div>
               <div class="text-center">
-                <button type="button" class="btnThree btn btn-secondary">Need a Hint?</button>
+                <button type="button" class="hintBtn btn btn-secondary">Need a Hint?</button>
                 <button type="button" class="ansbtn3 btn btn-info" >Answers</button>
 
               </div>
@@ -151,7 +150,7 @@
                 <label class="form-check-label"> the "=" symbol </label>
               </div>
               <div class="text-center">
-                <button type="button" class="btnFour btn btn-secondary">Need a Hint?</button>
+                <button type="button" class="hintBtn btn btn-secondary">Need a Hint?</button>
                 <button type="button" class="ansbtn btn btn-info" style="display: none;">Answers</button>
                 <button type="button" class="ansbtn4 btn btn-info" >Answers</button>
               </div>
