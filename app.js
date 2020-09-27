@@ -222,9 +222,9 @@ function QuestionBank4(){
 // showing answer card 
     answerTab4.addEventListener("click", function(){
     if(questionCard4.style.display = "block"){
-      answerCard4.style.display = "block";
       questionCard4.style.display = "none";
-
+      answerCard4.style.display = "block";
+    
   } else{
     questionCard4.style.display = "block";
     answerCard4.style.display = "none";
