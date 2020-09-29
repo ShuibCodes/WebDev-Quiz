@@ -1,151 +1,163 @@
+// Selecting Elements
+const hint = document.querySelector(".hintBtn");
+const form = document.querySelector('.quiz-form');
+const answers = ['B' , 'B' , 'B' , 'B'];
+const btn = document.querySelector(".submit");
+
+const difficultyBox = document.querySelector(".difficulty")
+
+//getting buttons
+const answerTab = document.querySelector(".ansbtn");
+const Easybtn = document.querySelector(".Easybtn")
+const Hardbtn = document.querySelector(".Hardbtn")
 
 
-/* Body */
-.title{
-  text-align: center;
+
+
+// answer cards
+ const questionCard1 = document.querySelector(".questionCard1");
+ const questionCard2 = document.querySelector(".questionCard2");
+ const questionCard3 = document.querySelector(".questionCard3");
+ const questionCard4 = document.querySelector(".questionCard4");
+ const answerCard1 = document.querySelector(".answerCard1");
+ const answerCard2 = document.querySelector(".answerCard2");
+ const answerCard3 = document.querySelector(".answerCard3");
+ const answerCard4 = document.querySelector(".answerCard4");
+
+// when page is loaded, automatically hide the answers
+
+window.addEventListener('DOMContentLoaded', (event) => {
+   answerTab.style.display ="none";
+  difficultyBox.style.display = "none";
+});
+
+// Click "Need a Hint?" to see Hint:
+  seeHint();
+
+
+// When submit is clicked-
+ScrollTop();
+hidePrompt();
+seeAnswerTab();
+seeAnswerCards()
+changeColors();
+
+function seeAnswerCards(){
  
-}
+let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4]
+let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4]
+    answerTab.addEventListener("click", function(){
+      answerTab.style.display = "none"
+      difficultyBox.style.display = "block";
+      allAnswers.forEach(function(e){
+        e.style.display = "block";
+        
+      })
+      allQuestions.forEach(function(e){
+        e.style.display = "none"
+      })
 
-.Homebtn{
-  margin-top: 0.5cm;
-  margin-left: 0.5cm;
-}
+    })
+   
+}  
 
-
-body {
-  background-color: lightsteelblue
-}
-
-
-
-
-
-/* Answer Cards */
-
-.card1, .card2 , .card3, .card4{
-  margin-top: 15em;
-  display: inline-block;
-  justify-content: space-around;
-  margin: 2em;
-}
-
-.text-color{
-  color: maroon
-}
-
-.box1{
-  text-align: center;
+// When Submit is pressed 
+btn.addEventListener("click", function(e){
   
-}
+    e.preventDefault();
 
-.Easybtn{
-  margin-right: 1.1cm;
-  margin-left: 0.5cm ;
-}
+  let score = 0;
+  const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value] ;
 
-
-
-.Green{
-background-color: greenyellow;
-  
-}
-
-.Red{
-  background-color: orangered;
-}
-
-
-.message{
-      font-size: 3em;
-      font-weight: 350;
-      text-align: center;
-      font-family: 'Syne', sans-serif;
+  // check the answers and add 25% for each correct answer
+  userAnswers.forEach((answer, index) => {
+    if (answer === answers[index]){
+      score += 25;
       
-}
+    }
+  });
+ 
+  // Display Results Message:
 
-.btnOne{
-  width: fit-content;
-  justify-content: space-around;
-}
+  const finalResult = document.querySelector('.thisspan');
+  finalResult.textContent = `${score}%`;
+  finalResult.style.display = "block";
 
-.ansbtn{
-  width: fit-content;
-  justify-content: space-around;
-}
+  const percentage = document.querySelector('.resultMessage');
+  if (percentage.style.display === "none") {
+    percentage.style.display = "block";
 
-
-.space{
-  color: black;
-  text-align: left;
-  margin-left: 2.6cm;
-
+  } else {
+    hint.style.display = "none";
+  }
+    
+})
+// change color of easy of answerCards 
+function changeColors(){
+  Easybtn.addEventListener("click", function(){
+    difficultyBox.classList.toggle("Green")
+  })
+  Hardbtn.addEventListener("click", function(){
+    difficultyBox.classList.toggle("Red")
+  })
   
 }
 
-.show{
-display: block;
-}
-
-.ansbtn{
-display: block;
-}
-
-
-.hidehint{
-display: none;
-}
 
 
 
 
+// creating a button to display hints 
+function seeHint(){
+  const questions = document.getElementsByClassName("question"); //Get all questions
+  
+  for (var i = 0; i < questions.length; i++) { //Iterate for each one of the questions
 
-.fade-in{
-  animation: fadeIn ease 1s;
-  -webkit-animation: fadeIn ease 1s;
-  -moz-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
-}@keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
+    questions[i].addEventListener("click", function(e) { //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
+      if(e.target.classList[0] == "hintBtn") { //Check if the target that triggered the event is the hint button
+        this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
+      }
+    });
   }
 }
+ 
 
-@-moz-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
+
+// function to hide answer button and show when quiz is finished
+
+function seeAnswerTab(){
+  btn.addEventListener("click" , function(){
+      answerTab.style.display = "block";
+  })
+
+}
+// Creating btn that takes user to top of page for results after submit:
+
+function ScrollTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// function to hide " on with the questions" after results are shown:
+
+function hidePrompt(){
+  const prompt = document.querySelector(".prompt");
+  btn.addEventListener('click', function(){
+   prompt.style.display = "none"
+  })
+}
+
+function seeHint(){
+  const questions = document.getElementsByClassName("question"); //Get all questions
+  
+  for (var i = 0; i < questions.length; i++) { //Iterate for each one of the questions
+
+    questions[i].addEventListener("click", function(e) { //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
+      if(e.target.classList[0] == "hintBtn") { //Check if the target that triggered the event is the hint button
+        this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
+      }
+    });
   }
 }
 
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-o-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-@-ms-keyframes fadeIn {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-}
 
