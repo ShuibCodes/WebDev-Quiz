@@ -4,10 +4,15 @@ const form = document.querySelector('.quiz-form');
 const answers = ['B' , 'B' , 'B' , 'B'];
 const btn = document.querySelector(".submit");
 
+const difficultyBox = document.querySelector(".difficulty")
+
 //getting buttons
 const answerTab = document.querySelector(".ansbtn");
 const Easybtn = document.querySelector(".Easybtn")
-const Hardbtn = document.querySelector(".Hardbtn") 
+const Hardbtn = document.querySelector(".Hardbtn")
+
+
+
 
 // answer cards
  const questionCard1 = document.querySelector(".questionCard1");
@@ -22,7 +27,8 @@ const Hardbtn = document.querySelector(".Hardbtn")
 // when page is loaded, automatically hide the answers
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  answerTab.style.display ="none";
+   answerTab.style.display ="none";
+  difficultyBox.style.display = "none";
 });
 
 // Click "Need a Hint?" to see Hint:
@@ -32,13 +38,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // When submit is clicked-
 ScrollTop();
 hidePrompt();
-seeAnswers();
+seeAnswerTab();
 seeAnswerCards()
+changeColors();
 
 function seeAnswerCards(){
-  let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4]
+ 
+let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4]
 let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4]
     answerTab.addEventListener("click", function(){
+      answerTab.style.display = "none"
+      difficultyBox.style.display = "block";
       allAnswers.forEach(function(e){
         e.style.display = "block";
         
@@ -48,10 +58,12 @@ let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4]
       })
 
     })
-}
+   
+}  
 
 // When Submit is pressed 
 btn.addEventListener("click", function(e){
+  
     e.preventDefault();
 
   let score = 0;
@@ -64,13 +76,12 @@ btn.addEventListener("click", function(e){
       
     }
   });
-
+ 
   // Display Results Message:
 
   const finalResult = document.querySelector('.thisspan');
   finalResult.textContent = `${score}%`;
   finalResult.style.display = "block";
-
 
   const percentage = document.querySelector('.resultMessage');
   if (percentage.style.display === "none") {
@@ -81,6 +92,20 @@ btn.addEventListener("click", function(e){
   }
     
 })
+// change color of easy of answerCards 
+function changeColors(){
+  Easybtn.addEventListener("click", function(){
+    difficultyBox.classList.toggle("Green")
+  })
+  Hardbtn.addEventListener("click", function(){
+    difficultyBox.classList.toggle("Red")
+  })
+  
+}
+
+
+
+
 
 // creating a button to display hints 
 function seeHint(){
@@ -100,7 +125,7 @@ function seeHint(){
 
 // function to hide answer button and show when quiz is finished
 
-function seeAnswers(){
+function seeAnswerTab(){
   btn.addEventListener("click" , function(){
       answerTab.style.display = "block";
   })
@@ -134,3 +159,5 @@ function seeHint(){
     });
   }
 }
+
+
