@@ -5,6 +5,7 @@
   text-align: center;
  
 }
+he
 
 .Homebtn{
   margin-top: 0.5cm;
@@ -16,12 +17,17 @@ body {
   background-color: lightsteelblue
 }
 
-
+.QuizTitle{
+  background-color: gray
+}
 
 
 
 /* Answer Cards */
+.answerCard1{
+  background-color: white
 
+}
 .card1, .card2 , .card3, .card4{
   margin-top: 15em;
   display: inline-block;
