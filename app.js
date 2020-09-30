@@ -1,7 +1,7 @@
 // Selecting Elements
 const hint = document.querySelector(".hintBtn");
 const form = document.querySelector('.quiz-form');
-const answers = ['B' , 'B' , 'B' , 'B'];
+const answers = ['B' , 'B' , 'B' , 'B', 'B'];
 const btn = document.querySelector(".submit");
 
 const difficultyBox = document.querySelector(".difficulty")
@@ -19,10 +19,12 @@ const Hardbtn = document.querySelector(".Hardbtn")
  const questionCard2 = document.querySelector(".questionCard2");
  const questionCard3 = document.querySelector(".questionCard3");
  const questionCard4 = document.querySelector(".questionCard4");
+ const questionCard5 = document.querySelector(".questionCard5");
  const answerCard1 = document.querySelector(".answerCard1");
  const answerCard2 = document.querySelector(".answerCard2");
  const answerCard3 = document.querySelector(".answerCard3");
  const answerCard4 = document.querySelector(".answerCard4");
+ const answerCard5 = document.querySelector(".answerCard5");
 
 // when page is loaded, automatically hide the answers
 
@@ -44,8 +46,8 @@ changeColors();
 
 function seeAnswerCards(){
  
-let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4]
-let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4]
+let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4,answerCard5]
+let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4,questionCard5]
     answerTab.addEventListener("click", function(){
       answerTab.style.display = "none"
       difficultyBox.style.display = "block";
@@ -159,5 +161,3 @@ function seeHint(){
     });
   }
 }
-
-
