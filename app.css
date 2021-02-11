@@ -18,6 +18,7 @@
   /* position: relative;
   left: -50px; */
   
+  
 }
 
 
@@ -25,19 +26,17 @@
 
 
 .grid{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+
+  gap: 30px;
 }
 /* 
 .form-check input{
   display: block;
 } */
 
-body,html{
- 
-
-}
 
 .containerr{
   max-width: 1200px;
@@ -70,12 +69,12 @@ body {
 
 /* Answer Cards */
 
-.card1, .card2 , .card3, .card4{
+/* .card1, .card2 , .card3, .card4{
   margin-top: 15em;
   display: inline-block;
   justify-content: space-around;
   margin: 2em;
-}
+} */
 
 .text-color{
   color: maroon

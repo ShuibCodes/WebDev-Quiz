@@ -1,7 +1,7 @@
 // Selecting Elements
 const hint = document.querySelector(".hintBtn");
 const form = document.querySelector('.quiz-form');
-const answers = ['B' , 'B' , 'B' , 'B'];
+const answers = ['B' , 'B'];
 const btn = document.querySelector(".submit");
 
 const difficultyBox = document.querySelector(".difficulty")
