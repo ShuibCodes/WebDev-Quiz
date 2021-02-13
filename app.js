@@ -1,7 +1,7 @@
 // Selecting Elements
 const hint = document.querySelector(".hintBtn");
 const form = document.querySelector('.quiz-form');
-const answers = ['B' , 'B', 'B', 'B','B', 'B'];
+const answers = ['B' , 'B', 'B', 'B','B'];
 const btn = document.querySelector(".submit");
 
 const difficultyBox = document.querySelector(".difficulty")
@@ -23,6 +23,7 @@ const Hardbtn = document.querySelector(".Hardbtn")
  const answerCard2 = document.querySelector(".answerCard2");
  const answerCard3 = document.querySelector(".answerCard3");
  const answerCard4 = document.querySelector(".answerCard4");
+ const answerCard5 = document.querySelector(".answerCard5");
 
 // when page is loaded, automatically hide the answers
 
@@ -44,11 +45,11 @@ changeColors();
 
 function seeAnswerCards(){
  
-let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4]
+let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4, answerCard5]
 let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4]
     answerTab.addEventListener("click", function(){
       answerTab.style.display = "none"
-      difficultyBox.style.display = "block";
+     
       allAnswers.forEach(function(e){
         e.style.display = "block";
         
@@ -67,12 +68,12 @@ btn.addEventListener("click", function(e){
     e.preventDefault();
 
   let score = 0;
-  const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value] ;
+  const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value, form.q5.value] ;
 
   // check the answers and add 25% for each correct answer
   userAnswers.forEach((answer, index) => {
     if (answer === answers[index]){
-      score += 16.67;
+      score += 20;
       
     }
   });
