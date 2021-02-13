@@ -1,7 +1,7 @@
 // Selecting Elements
 const hint = document.querySelector(".hintBtn");
 const form = document.querySelector('.quiz-form');
-const answers = ['B' , 'B'];
+const answers = ['B' , 'B', 'B', 'B','B', 'B'];
 const btn = document.querySelector(".submit");
 
 const difficultyBox = document.querySelector(".difficulty")
@@ -72,7 +72,7 @@ btn.addEventListener("click", function(e){
   // check the answers and add 25% for each correct answer
   userAnswers.forEach((answer, index) => {
     if (answer === answers[index]){
-      score += 25;
+      score += 16.67;
       
     }
   });
