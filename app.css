@@ -15,7 +15,10 @@
   
 
 }
-
+.submit{
+  padding: 10px 25px;
+  font-size: 30px;
+}
 .this{
  position: relative;
  left: 15rem;
@@ -44,6 +47,7 @@ form{
   min-height: 100px;
   max-width: 300px;
   min-width: 400px;
+  transition: all 1s linear;
   
   
 }
@@ -67,6 +71,33 @@ form{
   font-size: 30px;
 }
 
+.answerCard4, .answerCard5{
+  position: relative;
+  left: 15rem;
+}
+
+.questionCard4, .questionCard5{
+  position: relative;
+  left: 15rem;
+}
+
+.hidden{
+  display: none;
+}
+
+.visuallyhidden{
+  opacity: 0;
+}
+
+.answerCard1{
+  transition: all 1s linear;
+}
+
+.shown{
+  display: block;
+  transition: all 1s linear;
+}
+
 
 
 .grid{
@@ -75,9 +106,6 @@ form{
   gap: 20px;
 }
 /* 
-.form-check input{
-  display: block;
-} */
 
 
 .containerr{
@@ -163,6 +191,8 @@ background-color: greenyellow;
 .ansbtn{
   width: fit-content;
   justify-content: space-around;
+  padding: 10 20px;
+  font-size: 25px;
 }
 
 
@@ -196,17 +226,41 @@ display: block;
 .hidehint{
 display: none;
 }
-
-
-
-
-
-.fade-in{
-  animation: fadeIn ease 1s;
+.fade-in1{
+  animation:fadeIn ease 1s;
   -webkit-animation: fadeIn ease 1s;
+  -moz-animation: fadeIn ease 0.4s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}.fade-in2{
+  animation:fadeIn ease 1.5s;
+  -webkit-animation: fadeIn ease 1.5s;
   -moz-animation: fadeIn ease 1s;
-  -o-animation: fadeIn ease 1s;
-  -ms-animation: fadeIn ease 1s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}.fade-in3{
+  animation:fadeIn ease 2s;
+  -webkit-animation: fadeIn ease 2s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+
+
+.fade-in4{
+  animation:fadeIn ease 2.5s;
+  -webkit-animation: fadeIn ease 2.5s;
+  -moz-animation: fadeIn ease 2s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+
+.fade-in5{
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 1.5s;
+  -ms-animation: fadeIn ease 1.5s;
 }@keyframes fadeIn {
   0% {
     opacity:0;
