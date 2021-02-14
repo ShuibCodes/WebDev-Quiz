@@ -194,7 +194,16 @@ background-color: greenyellow;
   padding: 10 20px;
   font-size: 25px;
 }
-
+.back{
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 5px;
+  width: fit-content;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: lightblue;
+  font-family: sans-serif;
+}
 
 .space{
   color: black;

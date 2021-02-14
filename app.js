@@ -10,7 +10,7 @@ const difficultyBox = document.querySelector(".difficulty")
 const answerTab = document.querySelector(".ansbtn");
 const Easybtn = document.querySelector(".Easybtn")
 const Hardbtn = document.querySelector(".Hardbtn")
-
+const backbtn = document.querySelector(".back")
 
 
 
@@ -31,6 +31,7 @@ const Hardbtn = document.querySelector(".Hardbtn")
 window.addEventListener('DOMContentLoaded', (event) => {
    answerTab.style.display ="none";
   difficultyBox.style.display = "none";
+  backbtn.style.display= "none"
 });
 
 // Click "Need a Hint?" to see Hint:
@@ -52,7 +53,7 @@ let allAnswers = [answerCard1,answerCard2,answerCard3,answerCard4, answerCard5]
 let allQuestions =[questionCard1,questionCard2,questionCard3,questionCard4,questionCard5]
     answerTab.addEventListener("click", function(){
       answerTab.style.display = "none"
-     
+      backbtn.style.display="block"
       allAnswers.forEach(function(e){
        e.style.display = "block"
         
