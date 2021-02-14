@@ -24,20 +24,24 @@
 
 .title{
   width: 100%;
-  
+ 
 
 
 }
+.web{  
+  position: relative;
+  font-size: 120px;
+}
 
 .js{
-  display: flex;
-
+  height: 230px;
+  width: 240px;
 }
 
 .css{
   height: 230px;
-  display: flex;
-
+width: 440px;
+  
 }
 .checked{
   height:25px;
