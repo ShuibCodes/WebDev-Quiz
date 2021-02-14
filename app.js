@@ -10,7 +10,8 @@ const difficultyBox = document.querySelector(".difficulty")
 const answerTab = document.querySelector(".ansbtn");
 const Easybtn = document.querySelector(".Easybtn")
 const Hardbtn = document.querySelector(".Hardbtn")
-const backbtn = document.querySelector(".back")
+const backbtn = document.querySelector(".back");
+const wellDone = document.querySelector(".well-done")
 
 
 
@@ -79,6 +80,13 @@ btn.addEventListener("click", function(e){
     if (answer === answers[index]){
       score += 20;
       
+    } if(score < 100){
+      backbtn.style.display="block";
+      answerTab.style.display="none"
+      wellDone.style.display="none"
+    } else if(score === 100){
+      backbtn.style.display="none";
+      wellDone.style.display="block"
     }
   });
  

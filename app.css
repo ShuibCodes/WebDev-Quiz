@@ -21,28 +21,34 @@
 
 
 }
-
-.title{
-  width: 100%;
- 
-
-
+.intro {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center
+  
+  
 }
 .web{  
-  position: relative;
+  font-size: 120px;
+}
+
+
+.web{  
   font-size: 120px;
 }
 
 .js{
-  height: 230px;
-  width: 240px;
+  width: 150px;
+  padding-right: 24px;
+  
 }
 
 .css{
-  height: 230px;
-width: 440px;
-  
+  width: 240px;
 }
+
+
 .checked{
   height:25px;
   width: 25px;
@@ -249,6 +255,14 @@ background-color: greenyellow;
   margin-left: 2.6cm;
 
   
+}
+
+.well-done{
+  font-size: 90px;
+  color:black;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 800;
 }
 .answers{
   text-align: center;
