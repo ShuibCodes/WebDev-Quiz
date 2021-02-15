@@ -82,7 +82,7 @@ btn.addEventListener("click", function(e){
       
     } if(score < 100){
       backbtn.style.display="block";
-      answerTab.style.display="none"
+      // answerTab.style.display="none"
       wellDone.style.display="none"
     } else if(score === 100){
       backbtn.style.display="none";

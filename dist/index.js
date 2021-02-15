@@ -117,155 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"app.js":[function(require,module,exports) {
-// Selecting Elements
-var hint = document.querySelector(".hintBtn");
-var form = document.querySelector('.quiz-form');
-var answers = ['B', 'B', 'B', 'B', 'B'];
-var btn = document.querySelector(".submit");
-var difficultyBox = document.querySelector(".difficulty"); //getting buttons
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-var answerTab = document.querySelector(".ansbtn");
-var Easybtn = document.querySelector(".Easybtn");
-var Hardbtn = document.querySelector(".Hardbtn");
-var backbtn = document.querySelector(".back");
-var wellDone = document.querySelector(".well-done"); // answer cards
-
-var questionCard1 = document.querySelector(".questionCard1");
-var questionCard2 = document.querySelector(".questionCard2");
-var questionCard3 = document.querySelector(".questionCard3");
-var questionCard4 = document.querySelector(".questionCard4");
-var questionCard5 = document.querySelector(".questionCard5");
-var answerCard1 = document.querySelector(".answerCard1");
-var answerCard2 = document.querySelector(".answerCard2");
-var answerCard3 = document.querySelector(".answerCard3");
-var answerCard4 = document.querySelector(".answerCard4");
-var answerCard5 = document.querySelector(".answerCard5"); // when page is loaded, automatically hide the answers
-
-window.addEventListener('DOMContentLoaded', function (event) {
-  answerTab.style.display = "none";
-  difficultyBox.style.display = "none";
-  backbtn.style.display = "none";
-}); // Click "Need a Hint?" to see Hint:
-
-seeHint(); // When submit is clicked-
-
-ScrollTop();
-hidePrompt();
-seeAnswerTab();
-seeAnswerCards();
-changeColors();
-
-function seeAnswerCards() {
-  var allAnswers = [answerCard1, answerCard2, answerCard3, answerCard4, answerCard5];
-  var allQuestions = [questionCard1, questionCard2, questionCard3, questionCard4, questionCard5];
-  answerTab.addEventListener("click", function () {
-    answerTab.style.display = "none";
-    backbtn.style.display = "block";
-    allAnswers.forEach(function (e) {
-      e.style.display = "block";
-    });
-    allQuestions.forEach(function (e) {
-      e.style.display = "none";
-    });
-  });
-} // When Submit is pressed 
-
-
-btn.addEventListener("click", function (e) {
-  e.preventDefault();
-  ScrollTop();
-  var score = 0;
-  var userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value, form.q5.value]; // check the answers and add 25% for each correct answer
-
-  userAnswers.forEach(function (answer, index) {
-    if (answer === answers[index]) {
-      score += 20;
-    }
-
-    if (score < 100) {
-      backbtn.style.display = "block"; // answerTab.style.display="none"
-
-      wellDone.style.display = "none";
-    } else if (score === 100) {
-      backbtn.style.display = "none";
-      wellDone.style.display = "block";
-    }
-  }); // Display Results Message:
-
-  var finalResult = document.querySelector('.thisspan');
-  finalResult.textContent = "".concat(score, "%");
-  finalResult.style.display = "block";
-  var percentage = document.querySelector('.resultMessage');
-
-  if (percentage.style.display === "none") {
-    percentage.style.display = "block";
-  } else {
-    hint.style.display = "none";
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
-}); // change color of easy of answerCards 
 
-function changeColors() {
-  Easybtn.addEventListener("click", function () {
-    difficultyBox.classList.toggle("Green");
-  });
-  Hardbtn.addEventListener("click", function () {
-    difficultyBox.classList.toggle("Red");
-  });
-} // creating a button to display hints 
-
-
-function seeHint() {
-  var questions = document.getElementsByClassName("question"); //Get all questions
-
-  for (var i = 0; i < questions.length; i++) {
-    //Iterate for each one of the questions
-    questions[i].addEventListener("click", function (e) {
-      //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
-      if (e.target.classList[0] == "hintBtn") {
-        //Check if the target that triggered the event is the hint button
-        this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
-      }
-    });
-  }
-} // function to hide answer button and show when quiz is finished
-
-
-function seeAnswerTab() {
-  btn.addEventListener("click", function () {
-    answerTab.style.display = "block";
-  });
-} // Creating btn that takes user to top of page for results after submit:
-
-
-function ScrollTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-} // function to hide " on with the questions" after results are shown:
-
-
-function hidePrompt() {
-  var prompt = document.querySelector(".prompt");
-  btn.addEventListener('click', function () {
-    prompt.style.display = "none";
-  });
+  return bundleURL;
 }
 
-function seeHint() {
-  var questions = document.getElementsByClassName("question"); //Get all questions
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
 
-  for (var i = 0; i < questions.length; i++) {
-    //Iterate for each one of the questions
-    questions[i].addEventListener("click", function (e) {
-      //Attach an event listener on the question, in order to understand this a bit better search for event delegation in JS
-      if (e.target.classList[0] == "hintBtn") {
-        //Check if the target that triggered the event is the hint button
-        this.getElementsByClassName('msg')[0].classList.toggle("hidehint"); //Inside every question find the message and toggle the class
-      }
-    });
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
   }
+
+  return '/';
 }
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -469,5 +388,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/index.js.map
