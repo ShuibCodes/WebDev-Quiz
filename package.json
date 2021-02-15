@@ -1,11 +1,11 @@
 {
   "name": "oackage.json",
   "version": "1.0.0",
-  "description": "",
+  "description": "quizapp",
   "main": "QuizApp.js",
   "scripts": {
-   "dev": "parcel src/QuizApp.html",
-   "build": "parcel build src/QuizApp.html"
+   "dev": "parcel src/index.html",
+   "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
