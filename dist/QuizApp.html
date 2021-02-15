@@ -1,0 +1,197 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/app.ae05fb60.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@585&display=swap" rel="stylesheet">
+
+    <title>Quiz App</title>
+  <script src="/app.ae05fb60.js"></script></head>
+  <body>      <!-- top section -->
+    <div class="intro bg-white ">
+      <img class="js" src="/js-flat.2644e260.png" alt="js">
+        <h2 class="web text-primary">Wev Dev Quiz</h2>
+      <img class="css" src="/css2.92d6f4d8.png" alt="css">
+     </div>
+
+      <!-- quiz section -->
+      <div class="quiz py-4 bg-primary">
+        <div class="container">
+          <h2 class=" prompt my-5 text-white" style="display: block;">On with the questions...</h2>
+           <div class="message">
+             <p style="display: none;" class="well-done">Well Done !</p>
+             <P class="resultMessage" style="display: none;"> 
+                 You Scored  <span class="thisspan"></span>
+             </P> 
+             <div class="difficulty">
+              <div class="container text-center border border-info">
+                <p>How did you find it?</p>
+                <button type="button" class="Easybtn btn btn-success">Easy Peasy!</button>
+                <button type="button" class="Hardbtn btn btn-info">Difficult</button>
+           </div>
+             </div>
+           </div>
+           <div class="container">
+            <button type="button" class="ansbtn btn btn-info">Answers</button>
+            <button class="back" onClick="window.location.reload();">Try Again ?</button>
+           </div>
+           <button id="ans" class="thisbtn btn btn-danger" style="display: none;">See Answers</button>
+    
+      
+          <form class="quiz-form grid">
+            
+              <div class="questionCard1 cardd my-5" id="js">
+                <h4 class=" question1">1. Which is the proper HTML5 doctype?</h4>
+                <label class="custom-radio-btn">
+                  <div class="form-check my-2 text-white-50">
+                    <input class="checked" type="radio" name="q1" value="A" id="1qa" checked="">
+                    
+                    <label class="a form-check-label"> doctype html> </label>
+                  </div>
+                  <div class="form-check my-2 text-white-50">
+                    <input class="checked" type="radio" name="q1" value="B" id="1qb">
+
+                    <label class=" form-check-label"> !doctype html></label>
+                  </div>
+                </label>
+
+        
+              </div> 
+              
+              <div class="answerCard1 fade-in1 cardd my-5" style="display: none;" id="js">
+                <h4 class=" question1">1.Which is the proper HTML5 doctype?</h4>
+                <label class="answers">
+                  <h3 class="answers"> We use '!doctype html' to bootstrap a html page with a header,body and titles</h3>
+                </label>
+
+        
+              </div> 
+
+            
+            <div class="questionCard2 cardd my-5" style="border:1px solid #cecece;">
+              <h4 class="">2. The < p > element is an inline element.</h4>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q2" value="A" id="2qa" checked="">
+                <label class="a form-check-label"> True</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q2" value="B" id="2qb">
+                <label class=" form-check-label">False</label>
+              </div>
+            </div>
+            <div class="answerCard2 fade-in2 cardd my-5" style="display: none;" id="js">
+              <h4 class=" question1">2. The < p > element is an inline element.</h4>
+              <label class="answers">
+                <h3 class="answers">The Correct answer is False. This tag is by default a block style element in HTML.</h3>
+              </label>
+
+      
+            </div> 
+            <div class="questionCard3 cardd my-5" style="border:1px solid #cecece;">
+              <h4 class="">3. What does the acronym CSS stands for?</h4>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q3" value="A" id="3qa" checked="">
+                <label class="a form-check-label">Coordinated Style Sheets </label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q3" value="B" id="3qb">
+                <label class=" form-check-label"> 
+                  Cascading Style Sheets</label>
+              </div>
+            
+            </div>
+
+            <div class="answerCard3 fade-in3 cardd my-5" style="display: none;" id="js">
+              <h4 class=" question1">3. What does the acronym CSS stands for?</h4>
+              <label class="answers">
+                <h3 class="answers">The Correct answer is 'Cascading Style Sheets'.</h3>
+              </label>
+
+      
+            </div> 
+              
+            <div class="questionCard4 cardd my-5" style="border:1px solid #cecece;">
+              <h4 class=""> 4. The isNaN() method would return what value if the value checked is a string?</h4>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q4" value="A" id="4qa" checked="">
+                <label class="a form-check-label"> undefined</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q4" value="B" id="4qb">
+                <label class=" form-check-label">True </label>
+              </div>
+            
+            </div>
+            <div class="answerCard4 fade-in4 cardd my-5" style="display: none;" id="js">
+              <h4 class=" question1">4. The isNaN() method would return what value if the value checked is a string?</h4>
+              <label class="answers">
+                <h3 class="answers">The Correct answer is 'True'. isNaN stands for is Not a Number, so it would return true as a string isnt a number</h3>
+              </label>
+
+      
+            </div> 
+            <div class="questionCard5 cardd my-5" style="border:1px solid #cecece;">
+              <h4 class="">5. 
+                What allows data to be sent between a web page and a server without fully refreshing the web page? ? </h4>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q5" value="A" id="5qa" checked="">
+                <label class="a form-check-label"> The DOM</label>
+              </div>
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q5" value="B" id="5qb">
+                <label class=" form-check-label">AJAX</label>
+              </div>
+
+              <div class="form-check my-2 text-white-50">
+                <input class="checked" type="radio" name="q5" value="C" id="5qb">
+                <label class=" form-check-label">JavaScript</label>
+              </div>
+            </div>
+            <div class="answerCard5 fade-in5 cardd my-5" style="display: none;" id="js">
+              <h4 class=" question1">5. What allows data to be sent between a web page and a server without fully refreshing the web page? </h4>
+              <label class="answers">
+                <h3 class="answers">The Correct answer is 'AJAX'. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes</h3>
+              </label>
+
+      
+            </div> 
+
+
+            
+          </form>
+        
+             
+    
+         
+          <div class="text-center">
+            <button onclick="ScrollTop()" type="submit" class="submit btn btn-success"> Submit </button>
+          </div>
+        </div>
+
+      
+    <!-- Optional JavaScript -->
+<script src="/app.c328ef1a.js"></script>    
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </div></body>
+
+
+  
+
+
+</html>
+
+
+
+
+
+
+
+
+

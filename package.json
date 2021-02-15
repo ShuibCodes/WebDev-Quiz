@@ -1,0 +1,23 @@
+{
+  "name": "oackage.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "QuizApp.js",
+  "scripts": {
+   "dev": "parcel src/QuizApp.html",
+   "build": "parcel build src/QuizApp.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShuibCodes/webdevquiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShuibCodes/webdevquiz/issues"
+  },
+  "homepage": "https://github.com/ShuibCodes/webdevquiz#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
